@@ -35,34 +35,25 @@
                     </div>
                 </div>
             </div>
+             <?php 
 
-            <?php 
+             $user = User::find_id(3);
+             $user->destroy();
+
+
 
 
             // $user = new User();
-
-            // $result_set = User::find_all_users();
-
-            // while ($row = mysqli_fetch_array($result_set)) {
-            //     echo $row["username"] . "<br>";
-            // }
-
-;
-            // $found_user = User::find_id(1)
-
-            // $user = User::instant($the_record);
-           
-        // $users = User::find_all_users();
-
-        // foreach ($users as $user) {
-        //     echo $user->username . "<br>";
-        // }
-
-$found_user = User::find_id(1);
-
-echo $found_user->username;
+            // $user->username = "lola"; 
+            // $user->id = 4; 
+            // $user->passowrd = "1234"; 
+            // $user->first_name = "Mike"; 
+            // $user->last_name = "Harris"; 
+            // $user->create();
 
             ?>
+
+
 
         </div>
         <!-- /#page-wrapper -->

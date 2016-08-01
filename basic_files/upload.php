@@ -20,16 +20,20 @@ UPLOAD_ERR_CANT_WRITE => "Failed to write file to disk.",
 UPLOAD_ERR_EXTENSION => "A PHP extension stopped the file upload"
 );
 
-$the_error = $_FILES['file_upload']['tmp'];
+$temp_name = $_FILES['file_upload']['tmp_name'];
 $the_file = $_FILES['file_upload']['name'];
-$directory = "uploadsfrl5 ;.4";
+$directory = "uploads";
 
+if (move_uploaded_file($temp_name . "/" . $directory)) {
 
+echo "File uploaded successfully";
 
+} else {
 
+	$the_error = $_FILES['file_upload']['error'];
+	$the_message = $upload_errors[$the_error];
+}
 
-$the_error = $_FILES['file_upload']['error'];
-$the_message = $upload_errors[$the_error];
 
 	?>
 
@@ -57,7 +61,7 @@ $the_message = $upload_errors[$the_error];
 
 	</h2>
 		<input type="file" name="file_upload"><br>
-		<input type="button" value="send" name="submit" >
+		<input type="submit" value="send" name="submit" >
 	</form>
 	
 </body>
