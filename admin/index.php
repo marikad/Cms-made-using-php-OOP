@@ -38,11 +38,11 @@
              <?php 
 
              // $user = User::find_id(4);
-             // $user->username = "heyyyy";
-             // $user->save();
+             // $user->username = "ella32";
+             // $user->update();
 
              $user = new User();
-             $user->username = "helllo";
+             $user->username = "student";
              $user->create();
 
 
@@ -52,13 +52,13 @@
 
 
 
-            $user = new User();
-            $user->username = "lela"; 
-            // $user->id = 4; 
-            $user->passowrd = "dedew"; 
-            $user->first_name = "eloise"; 
-            $user->last_name = "Harrison"; 
-            $user->create();
+            // $user = new User();
+            // $user->username = "lela"; 
+            // // $user->id = 4; 
+            // $user->passowrd = "dedew"; 
+            // $user->first_name = "eloise"; 
+            // $user->last_name = "Harrison"; 
+            // $user->create();
 
             ?>
 
