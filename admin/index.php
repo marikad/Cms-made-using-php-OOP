@@ -37,19 +37,28 @@
             </div>
              <?php 
 
-             $user = User::find_id(3);
-             $user->destroy();
+             // $user = User::find_id(4);
+             // $user->username = "heyyyy";
+             // $user->save();
+
+             $user = new User();
+             $user->username = "helllo";
+             $user->create();
+
+
+             // $user = User::find_id(3);
+             // $user->destroy();
 
 
 
 
-            // $user = new User();
-            // $user->username = "lola"; 
+            $user = new User();
+            $user->username = "lela"; 
             // $user->id = 4; 
-            // $user->passowrd = "1234"; 
-            // $user->first_name = "Mike"; 
-            // $user->last_name = "Harris"; 
-            // $user->create();
+            $user->passowrd = "dedew"; 
+            $user->first_name = "eloise"; 
+            $user->last_name = "Harrison"; 
+            $user->create();
 
             ?>
 
