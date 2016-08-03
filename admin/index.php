@@ -37,12 +37,18 @@
             </div>
              <?php 
 
+             $users = User::find_all_users();
+
+             foreach ($users as $user) {
+                echo $user->username . "<br>";
+             }
+
              // $user = User::find_id(4);
              // $user->username = "ella32";
              // $user->update();
 
              $user = new User();
-             $user->username = "student";
+             $user->username = "new student";
              $user->create();
 
 
