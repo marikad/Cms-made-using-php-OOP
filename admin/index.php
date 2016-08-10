@@ -37,34 +37,9 @@
             </div>
              <?php 
 
-             $users = User::find_all_users();
+     
 
-             foreach ($users as $user) {
-                echo $user->username . "<br>";
-             }
-
-             // $user = User::find_id(4);
-             // $user->username = "ella32";
-             // $user->update();
-
-             $user = new User();
-             $user->username = "new student";
-             $user->create();
-
-
-             // $user = User::find_id(3);
-             // $user->destroy();
-
-
-
-
-            // $user = new User();
-            // $user->username = "lela"; 
-            // // $user->id = 4; 
-            // $user->passowrd = "dedew"; 
-            // $user->first_name = "eloise"; 
-            // $user->last_name = "Harrison"; 
-            // $user->create();
+          
 
             ?>
 
