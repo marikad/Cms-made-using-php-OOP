@@ -2,6 +2,8 @@
 <?php if (!$session->is_signed_in()) {redirect('login.php');} ?>
 
 <?php 
+
+
 $photos = Photo::find_all();
 
 ?>
@@ -22,9 +24,11 @@ $photos = Photo::find_all();
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
+                    <p class="bg-danger">
+                        <?php echo $message; ?>
+                    </p>
                         <h1 class="page-header">
                             Photos
-                            <small>Subheading</small>
                         </h1>
                         <div class="col-md-12">
                             
@@ -37,6 +41,7 @@ $photos = Photo::find_all();
                                         <th>File Name</th>
                                         <th>Title</th>
                                         <th>Size</th>
+                                        <th>Comments</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -56,6 +61,16 @@ $photos = Photo::find_all();
                                         <td><?php echo $photo->filename; ?></td>
                                         <td><?php echo $photo->title; ?></td>
                                         <td><?php echo $photo->size; ?></td>
+                                        <td>
+                                                
+                                        <?php 
+
+                                        $comments = Comment::find_the_comments($photo->id);
+                                        ;
+                     
+                                        ?>
+                                            <a href="comment_photo.php?id=<?php echo $photo->id; ?>"><?php echo count($comments) ?></a>
+                                        </td>
                                     </tr>
                                      <?php endforeach; ?>
 

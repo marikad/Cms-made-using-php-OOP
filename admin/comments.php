@@ -22,11 +22,13 @@ $comments = Comment::find_all();
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
+                    <p class="bg-danger">
+                        <?php echo $message; ?>
+                    </p>
                         <h1 class="page-header">
-                            comments
+                            Comments
                         </h1>
                         
-                            <a href="add_comment.php" class="btn btn-primary">Add comment</a>
                         <div class="col-md-12">
                             
 

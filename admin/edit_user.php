@@ -1,4 +1,5 @@
 <?php include("includes/header.php"); ?>
+<?php include("includes/photo_library_modal.php")?>
 <?php if (!$session->is_signed_in()) {redirect('login.php');} ?>
 
 <?php 
@@ -20,11 +21,15 @@ if (isset($_POST['update'])) {
 
         if (empty($_FILES['user_image'])) {
             $user->save();
+            redirect("users.php");
+            $session->message("The user with an id of {$user->id} has been updated.");
         } else{
         $user->set_file($_FILES['user_image']);
         $user->upload_photo();
          $user->save();
-         redirect("edit_user.php?id={$user->id}");
+        $session->message("The user with an id of {$user->id} has been updated.");
+         redirect("users.php");
+         // redirect("edit_user.php?id={$user->id}");
         }
 
 
@@ -56,8 +61,8 @@ if (isset($_POST['update'])) {
                             <small>Subheading</small>
                         </h1>
 
-                        <div class="col-md-6">
-                            <img  class="img-responsive" src="<?php echo $user->image_path_and_placeholder(); ?>" alt="">
+                        <div class="col-md-6 user_image_box">
+                            <a id="user-id" href="" data-toggle="modal" data-target="#photo-library"><img  class="img-responsive" src="<?php echo $user->image_path_and_placeholder(); ?>" alt=""></a>
                         </div>
                         <form action="" method="post" enctype="multipart/form-data">
                         <div class="col-md-6">

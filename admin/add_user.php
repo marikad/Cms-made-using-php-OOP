@@ -12,8 +12,13 @@ if (isset($_POST['create'])) {
         $user->last_name = $_POST['last_name'];
         $user->password = $_POST['password'];
         $user->set_file($_FILES['user_image']);
+         $user->upload_photo();
+          redirect('users.php');
+        $session->message("The user with {$user->username} has been created.");
+         $user->save();
 
-        $user->save_photo_and_image();
+
+       
     }
 }
 
@@ -36,6 +41,9 @@ if (isset($_POST['create'])) {
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
+                    <p class="bg-success">
+                        <?php echo $message; ?>
+                    </p>
                         <h1 class="page-header">
                             users
                             <small>Subheading</small>

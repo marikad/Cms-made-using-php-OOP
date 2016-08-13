@@ -7,13 +7,24 @@ class Session{
 	private $signed_in = false;
 	public $user_id;
 	public $message;
+	public $count;
 
 
 
 	function __construct(){
 		session_start();
 		$this->check_the_login();
+		$this->visitor_count();
 		$this->check_message();
+	}
+
+	public function visitor_count()
+	{
+		if (isset($_SESSION['count'])) {
+			return $this->count = $_SESSION['count']++;
+		} else{
+			$_SESSION['count'] = 1;
+		}
 	}
 
 	public function is_signed_in()
@@ -48,7 +59,7 @@ class Session{
 	public function message($msg="")
 	{
 		if (!empty($msg)) {
-			$_SESSION['message'] = msg;
+			$_SESSION['message'] = $msg;
 		} else {
 			return $this->message;
 		}
@@ -70,6 +81,7 @@ class Session{
 
 
 $session = new Session();
+$message = $session->message();
 
 
 

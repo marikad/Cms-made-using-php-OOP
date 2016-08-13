@@ -40,9 +40,8 @@
                     <div class="col-lg-12">
                         <h1 class="page-header">
                             Upload
-                            <small>Subheading</small>
                         </h1>
-                            
+                            <div class="row">
                             <div class="col-md-6">
 
                             <?php echo $message ?>
@@ -56,9 +55,15 @@
                             <input type="submit" name="submit">
                         </form>
                         </div>
-
+                    </div>
 
                     </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <form action="upload" class="dropzone"></form>
                 </div>
             </div>
                 <!-- /.row -->
